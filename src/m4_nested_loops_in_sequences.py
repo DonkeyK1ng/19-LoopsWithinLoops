@@ -3,22 +3,22 @@ This project demonstrates NESTED LOOPS (i.e., loops within loops)
 in the context of SEQUENCES OF SUB-SEQUENCES.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Yuanning Zuo.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
     """ Calls the other functions to test them. """
-    run_test_multiply_numbers()
-    run_test_sum_numbers()
-    run_test_print_characters()
+    # run_test_multiply_numbers()
+    # run_test_sum_numbers()
+    # run_test_print_characters()
     run_test_print_characters_slanted()
 
 
 def run_test_multiply_numbers():
     """ Tests the   multiply_numbers   function. """
     # ------------------------------------------------------------------
-    # We have supplied tests for you. No additional tests are required,
+    # We have supplied tests for 1you. No additional tests are required,
     # although you are welcome to supply more tests if you choose.
     # ------------------------------------------------------------------
     print()
@@ -128,6 +128,8 @@ def multiply_numbers(sequence_of_lists):
     #             to loop through it in the INNER loop.
     #        -- See   m2e_nested_loops_in_sequences   as needed.
     # ------------------------------------------------------------------
+    for k in range(len(sequence_of_lists)):
+        print(sequence_of_lists[k])
 
 
 def run_test_sum_numbers():
@@ -169,6 +171,11 @@ def sum_numbers(seq_seq):
     # TODO: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
+    sum = 0
+    for k in range(len(seq_seq)):
+        sum=sum+(len(seq_seq[k]))
+    return sum
+        # print(len(seq_seq[k]))
 
 
 def run_test_print_characters():
@@ -221,6 +228,9 @@ def print_characters(sequence_of_strings):
     #  ** READ THE TESTS that have been written for you (ABOVE).
     #  ** ASK QUESTIONS if you do not understand the TESTS (ABOVE).
     # ------------------------------------------------------------------
+    for i in range(len(sequence_of_strings)):
+        for j in range(len(sequence_of_strings[i])):
+            print(sequence_of_strings[i][j])
 
 
 def run_test_print_characters_slanted():
@@ -277,6 +287,14 @@ def print_characters_slanted(sequence_of_strings):
     # ** HINT: ** Consider using string multiplication for the spaces
     #             and string addition to stitch the spaces to the character.
     # ------------------------------------------------------------------
+    for k in range(len(sequence_of_strings)):
+        for i in range(len(sequence_of_strings[k])):
+            for j in range(i):
+                print(" ",end="")
+            # print blank i times
+            # print(i*" ",end="")
+
+            print(sequence_of_strings[k][i])
 
 
 # ----------------------------------------------------------------------
